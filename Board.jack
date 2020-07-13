@@ -1,0 +1,126 @@
+/** Implements the game board. */
+class Board {
+   static int score;
+   field int x, y;   
+
+   /** Constructs a new board with a given location and size. */
+   constructor Board new() {
+      var int currentScore;
+      let currentScore = 0;
+      let score = currentScore;
+      return this;
+   }
+
+   /** Disposes this board. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   /** Displays board. */
+   method void display() {
+      do Board.draw();
+      do Board.label();
+      return;
+   }
+
+   /** Labels this board. */
+   function void label() {
+      do Board.addTitle();
+      do Board.addCategories();
+      do Board.fillBoard();
+      do Board.addScore();
+      // do Board.userPrompt();
+      return;
+   }
+
+   /** Adds title to board */
+   function void addTitle() {
+      var String title;
+      let title = "Jackpardy!";
+      do Output.moveCursor(1, 27);
+      do Output.printString(title);
+      // do title.dispose();
+      return;
+   }
+
+   /** Adds categories to board */
+   function void addCategories() {
+      var String category1, category2, category3, category4, category5;
+      let category1 = "Gates";
+      let category2 = "Chips";
+      let category3 = "Logic";
+      let category4 = "Jack";
+      let category5 = "Etc";
+      do Output.moveCursor(3, 10);
+      do Output.printString(category1);
+      do Output.moveCursor(3, 20);
+      do Output.printString(category2);
+      do Output.moveCursor(3, 30);
+      do Output.printString(category3);
+      do Output.moveCursor(3, 40);
+      do Output.printString(category4);
+      do Output.moveCursor(3, 50);
+      do Output.printString(category5);
+      return;
+   }
+
+   /** Fills in board */
+   function void fillBoard() {
+      var String level1, level2, level3, level4, level5;
+      var int column, row;
+
+      let level1 = "100";
+      let level2 = "200";
+      let level3 = "300";
+      let level4 = "400";
+      let level5 = "500";
+
+      let column = 10;
+      while (column < 51) {
+         do Output.moveCursor(7, column);
+         do Output.printString(level1);
+         do Output.moveCursor(10, column);
+         do Output.printString(level2);
+         do Output.moveCursor(13, column);
+         do Output.printString(level3);
+         do Output.moveCursor(16, column);
+         do Output.printString(level4);
+         do Output.moveCursor(19, column);
+         do Output.printString(level5);
+         let column = column + 10;
+      }
+      return;
+   }
+
+   /** Informs the user of their score */
+   function void addScore() {
+      var String currentScore;
+      let currentScore = "Score: ";
+      do Output.moveCursor(22, 50);
+      do Output.printString(currentScore);
+      do Output.printInt(score);
+      return;
+   }
+
+   /** Draws rows and columns of this board. */
+   function void draw() {
+      do Screen.setColor(true);
+      // Draw columns
+      do Screen.drawLine(51, 25, 51, 229);
+      do Screen.drawLine(133, 25, 133, 229);
+      do Screen.drawLine(215, 25, 215, 229);
+      do Screen.drawLine(297, 25, 297, 229);
+      do Screen.drawLine(379, 25, 379, 229);
+      do Screen.drawLine(461, 25, 461, 229);
+      // Draw rows
+      do Screen.drawLine(51, 25, 461, 25);
+      do Screen.drawLine(51, 59, 461, 59);
+      do Screen.drawLine(51, 93, 461, 93);
+      do Screen.drawLine(51, 127, 461, 127);
+      do Screen.drawLine(51, 161, 461, 161);
+      do Screen.drawLine(51, 195, 461, 195);
+      do Screen.drawLine(51, 229, 461, 229);
+      return;
+   }
+}

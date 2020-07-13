@@ -1,0 +1,23 @@
+class JackpardyGame {
+   field Board board; // the board of this game
+
+   /** Constructs a new Jackpardy Game. */
+   constructor JackpardyGame new() {
+      // Creates a new home screen with board, initial score, and question prompt
+      let board = Board.new();
+      return this;
+   }
+
+   /** Disposes this game. */
+   method void dispose() {
+      do board.dispose();
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   /** Runs the game*/
+   method void run() {
+      do board.display();
+      return;
+   }
+}
