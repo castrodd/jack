@@ -1,0 +1,36 @@
+class Questions {
+    field boolean validCategory, validOption;
+
+    /** Constructs a new question checker. */
+   constructor Questions new() {
+      let validCategory = false;
+      let validOption = false;
+      return this;
+   }
+
+   /** Prompts user for category */
+   method void askCategory() {
+      var String prompt;
+      var String emptyLine;
+      let prompt = "Enter a category? ";
+      let emptyLine = "                    ";
+      do Output.moveCursor(22, 10);
+      do Output.printString(emptyLine);
+      do Output.moveCursor(22, 10);
+      do Output.printString(prompt);
+      return;
+   }
+
+   /** Prompts user for value */
+   method void askValue() {
+      var String prompt;
+      var String emptyLine;
+      let prompt = "Enter a value? ";
+      let emptyLine = "                    ";
+      do Output.moveCursor(22, 10);
+      do Output.printString(emptyLine);
+      do Output.moveCursor(22, 10);
+      do Output.printString(prompt);
+      return;
+   }
+}

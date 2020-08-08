@@ -1,3 +1,5 @@
 class Question {
-    
+    field int value;
+    field boolean answered;
+    field string content, optionA, optionB, optionC;
 }

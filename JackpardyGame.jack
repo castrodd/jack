@@ -1,10 +1,16 @@
 class JackpardyGame {
    field Board board; // the board of this game
+   field Questions questions; // the question checker
+   field char currentCategory;
+   field char currentValue;
 
    /** Constructs a new Jackpardy Game. */
    constructor JackpardyGame new() {
       // Creates a new home screen with board, initial score, and question prompt
       let board = Board.new();
+      let questions = Questions.new();
+      let currentCategory = 0;
+      let currentValue = 0;
       return this;
    }
 
@@ -17,7 +23,27 @@ class JackpardyGame {
 
    /** Runs the game*/
    method void run() {
+      var int remainingQuestions;
+
       do board.display();
+
+      let remainingQuestions = board.showRemainingQuestions();
+      while (remainingQuestions > 0) {
+        do questions.askCategory();
+        while (currentCategory = 0) {
+            let currentCategory = Keyboard.readChar();
+        }
+
+        do questions.askValue();
+        while (currentValue = 0) {
+            let currentValue = Keyboard.readChar();
+        }
+
+        do Screen.clearScreen();
+        let currentCategory = 0;
+        let currentValue = 0;
+        let remainingQuestions = remainingQuestions - 1;
+      }
       return;
    }
 }

@@ -1,13 +1,13 @@
 /** Implements the game board. */
 class Board {
    static int score;
+   static int remainingQuestions;
    field int x, y;   
 
    /** Constructs a new board with a given location and size. */
    constructor Board new() {
-      var int currentScore;
-      let currentScore = 0;
-      let score = currentScore;
+      let score = 0;
+      let remainingQuestions = 25;
       return this;
    }
 
@@ -29,7 +29,7 @@ class Board {
       do Board.addTitle();
       do Board.addCategories();
       do Board.fillBoard();
-      do Board.addScore();
+      do Board.showScore();
       // do Board.userPrompt();
       return;
    }
@@ -47,11 +47,11 @@ class Board {
    /** Adds categories to board */
    function void addCategories() {
       var String category1, category2, category3, category4, category5;
-      let category1 = "Gates";
-      let category2 = "Chips";
-      let category3 = "Logic";
-      let category4 = "Jack";
-      let category5 = "Etc";
+      let category1 = "A";
+      let category2 = "B";
+      let category3 = "C";
+      let category4 = "D";
+      let category5 = "E";
       do Output.moveCursor(3, 10);
       do Output.printString(category1);
       do Output.moveCursor(3, 20);
@@ -70,11 +70,11 @@ class Board {
       var String level1, level2, level3, level4, level5;
       var int column, row;
 
-      let level1 = "100";
-      let level2 = "200";
-      let level3 = "300";
-      let level4 = "400";
-      let level5 = "500";
+      let level1 = "1";
+      let level2 = "2";
+      let level3 = "3";
+      let level4 = "4";
+      let level5 = "5";
 
       let column = 10;
       while (column < 51) {
@@ -94,13 +94,18 @@ class Board {
    }
 
    /** Informs the user of their score */
-   function void addScore() {
+   function void showScore() {
       var String currentScore;
       let currentScore = "Score: ";
       do Output.moveCursor(22, 50);
       do Output.printString(currentScore);
       do Output.printInt(score);
       return;
+   }
+
+   /** Returns number of questions remaining in game. **/
+   method int showRemainingQuestions() {
+      return remainingQuestions;
    }
 
    /** Draws rows and columns of this board. */
