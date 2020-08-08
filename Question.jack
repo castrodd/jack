@@ -1,5 +1,19 @@
 class Question {
     field int value;
     field boolean answered;
-    field string content, optionA, optionB, optionC;
+    field string answer, content, optionA, optionB, optionC;
+
+    /** Constructs a new question. */
+   constructor Question new(int val, boolean done, char answr, String cntnt, String optA, String optB, String optC) {
+      let value = val;
+      let answered = done;
+      let answer = answr;
+      let content = cntnt;
+      let optionA = optA;
+      let optionB = optB;
+      let optionC = optC;
+      return this;
+   }
+
+   
 }

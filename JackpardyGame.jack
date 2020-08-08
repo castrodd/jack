@@ -17,6 +17,7 @@ class JackpardyGame {
    /** Disposes this game. */
    method void dispose() {
       do board.dispose();
+      do questions.dispose();
       do Memory.deAlloc(this);
       return;
    }
@@ -39,11 +40,16 @@ class JackpardyGame {
             let currentValue = Keyboard.readChar();
         }
 
-        do Screen.clearScreen();
+        do questions.validateAndShowQuestion(currentCategory, currentValue);
+
         let currentCategory = 0;
         let currentValue = 0;
         let remainingQuestions = remainingQuestions - 1;
       }
+
+      do Screen.clearScreen();
+      do Output.moveCursor(13, 25);
+      do Output.printString("Game Over!");
       return;
    }
 }

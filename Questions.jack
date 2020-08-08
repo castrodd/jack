@@ -1,11 +1,19 @@
 class Questions {
     field boolean validCategory, validOption;
+    static Array questions;
 
     /** Constructs a new question checker. */
    constructor Questions new() {
       let validCategory = false;
       let validOption = false;
+      let questions = Array.new(5);
       return this;
+   }
+
+   /** Disposes the question checker. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
    }
 
    /** Prompts user for category */
@@ -32,5 +40,10 @@ class Questions {
       do Output.moveCursor(22, 10);
       do Output.printString(prompt);
       return;
+   }
+
+   /** Validate and show selected question */
+   method int validateAndShowQuestion(char category, char value) {
+      return 0;
    }
 }
