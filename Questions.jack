@@ -147,12 +147,15 @@ class Questions {
       do Output.moveCursor(7, 10);
       do Output.printString(questionContent);
       
+      let optionA = currentQuestion.getOptionA();
       do Output.moveCursor(10, 10);
       do Output.printString(optionA);
 
+      let optionB = currentQuestion.getOptionB();
       do Output.moveCursor(13, 10);
       do Output.printString(optionB);
 
+      let optionC = currentQuestion.getOptionC(); 
       do Output.moveCursor(16, 10);
       do Output.printString(optionC);
 

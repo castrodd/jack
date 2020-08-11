@@ -36,4 +36,18 @@ class Question {
       return value;
    }
 
+   /** Get answer A */
+   method String getOptionA() {
+      return optionA;
+   }
+
+   /** Get answer B */
+   method String getOptionB() {
+      return optionB;
+   }
+
+   /** Get answer C */
+   method String getOptionC() {
+      return optionC;
+   }
 }
