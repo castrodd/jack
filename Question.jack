@@ -1,18 +1,27 @@
 class Question {
     field int answer, value;
-    field boolean answered;
+    field boolean answered, correct;
     field string content, optionA, optionB, optionC;
 
     /** Constructs a new question. */
-   constructor Question new(int val, boolean done, int answr, String cntnt, String optA, String optB, String optC) {
-      let value = val;
-      let answered = done;
-      let answer = answr;
-      let content = cntnt;
-      let optionA = optA;
-      let optionB = optB;
-      let optionC = optC;
-      return this;
+   constructor Question new(
+      int val, 
+      boolean done,
+      boolean right,
+      int answr, 
+      String cntnt, 
+      String optA, 
+      String optB, 
+      String optC) {
+        let value = val;
+        let answered = done;
+        let correct = right;
+        let answer = answr;
+        let content = cntnt;
+        let optionA = optA;
+        let optionB = optB;
+        let optionC = optC;
+        return this;
    }
 
    /** Disposes the question. */
@@ -32,7 +41,7 @@ class Question {
    }
 
    /** Get question value */
-   method String getValue() {
+   method int getValue() {
       return value;
    }
 
@@ -49,5 +58,16 @@ class Question {
    /** Get answer C */
    method String getOptionC() {
       return optionC;
+   }
+
+   /** Set question as completed. */
+   method void setComplete() {
+      let answered = true;
+      return;
+   }
+
+   /** Get questions status. */
+   method boolean isComplete() {
+      return answered;
    }
 }

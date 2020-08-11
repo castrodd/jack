@@ -10,7 +10,7 @@ class Questions {
       let questions = Array.new(5);
       let questions[0] = Array.new(5);
       let categoryOne = questions[0];
-      let categoryOne[0] = Question.new(100, false, 66, "Q: What is HDL?", "A. Heavy dog licks", "B. Hardware description language", "C. High definition logging");
+      let categoryOne[0] = Question.new(100, false, false, 66, "Q: What is HDL?", "A. Heavy dog licks", "B. Hardware description language", "C. High definition logging");
       
       return this;
    }
@@ -178,7 +178,8 @@ class Questions {
             let waitForAck = Keyboard.keyPressed();
          }
       }
-
+      
+      currentQuestion.setComplete();
       do Screen.clearScreen();
       return;
    }
@@ -207,5 +208,10 @@ class Questions {
         do displayAndScoreQuestion(currentQuestion);
 
         return;
+   }
+
+   /** Provide questions */
+   method Array getQuestions() {
+      return questions;
    }
 }

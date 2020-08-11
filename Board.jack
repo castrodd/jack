@@ -18,19 +18,19 @@ class Board {
    }
 
    /** Displays board. */
-   method void display() {
+   method void display(Questions questions) {
       do Board.draw();
-      do Board.label();
+      do Board.label(questions);
       return;
    }
 
    /** Labels this board. */
-   function void label() {
+   function void label(Questions questions) {
       do Board.addTitle();
       do Board.addCategories();
-      do Board.fillBoard();
+      do Board.fillBoard(questions);
       do Board.showScore();
-      // do Board.userPrompt();
+
       return;
    }
 
@@ -66,29 +66,41 @@ class Board {
    }
 
    /** Fills in board */
-   function void fillBoard() {
-      var String level1, level2, level3, level4, level5;
-      var int column, row;
-
-      let level1 = "1";
-      let level2 = "2";
-      let level3 = "3";
-      let level4 = "4";
-      let level5 = "5";
+   function void fillBoard(Questions questions) {
+      var int column, row, categoryIndex, currentValue;
+      var Array allQuestions;
+      var Category currentCategory;
+      var Question currentQuestion;
+      var boolean isComplete;
 
       let column = 10;
+      let row = 7;
+      let categoryIndex = 0;
+      let questionIndex = 0;
+      let allQuestions = questions.getQuestions();
+
       while (column < 51) {
-         do Output.moveCursor(7, column);
-         do Output.printString(level1);
-         do Output.moveCursor(10, column);
-         do Output.printString(level2);
-         do Output.moveCursor(13, column);
-         do Output.printString(level3);
-         do Output.moveCursor(16, column);
-         do Output.printString(level4);
-         do Output.moveCursor(19, column);
-         do Output.printString(level5);
+         while (row < 20) {
+            let currentCategory = allQuestions[categoryIndex];
+            let currentQuestion = currentCategory[questionIndex];
+            let isComplete = currentQuestion.isComplete();
+            let currentValue = currentQuestion.getValue();
+
+            if (isComplete) {
+               do Output.printString("X");
+            }
+            if (~isComplete) {
+               do Output.printInt(currentValue);
+            }
+            
+            let row = row + 3;
+            let questionIndex = questionIndex + 1;
+         }
+         
          let column = column + 10;
+         let row = 7;
+         let currentCategory = currentCategory + 1;
+         let questionIndex = 0;
       }
       return;
    }
