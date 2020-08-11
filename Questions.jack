@@ -1,12 +1,12 @@
 class Questions {
-    field boolean validCategory, validOption;
+    field boolean validCategory, validValue;
     static Array questions;
 
     /** Constructs a new question checker. */
    constructor Questions new() {
-      let validCategory = false;
-      let validOption = false;
+      let validSelections = false;
       let questions = Array.new(5);
+      
       return this;
    }
 
@@ -42,8 +42,107 @@ class Questions {
       return;
    }
 
+   /** Validate category selection */
+   method boolean validateCategory(char category) {
+      if (category = "A") {
+         return true;
+      }
+      if (category = "B") {
+         return true;
+      }
+      if (category = "C") {
+         return true;
+      }
+      if (category = "D") {
+         return true;
+      }
+      if (category = "E") {
+         return true;
+      }
+
+      return false;
+   }
+
+   /** Validate value selection */
+   method boolean validateCategory(char value) {
+      if (value = "1") {
+         return true;
+      }
+      if (value = "2") {
+         return true;
+      }
+      if (value = "3") {
+         return true;
+      }
+      if (value = "4") {
+         return true;
+      }
+      if (value = "5") {
+         return true;
+      }
+
+      return false;
+   }
+
+   /** Show selected question */
+   method void displayAndScoreQuestion(Question currentQuestion) {
+      var char userAnswer;
+      var char correctAnswer;
+      var int questionValue;
+      var String questionContent;
+      var String optionA;
+      var String optionB;
+      var String optionC;
+
+
+      let questionContent = currentQuestion.getContent();
+      do Screen.clearScreen();
+      do Output.moveCursor(7, 10);
+      do Output.printString(questionContent);
+      
+      do Output.moveCursor(10, 10);
+      do Output.printString(optionA);
+
+      do Output.moveCursor(13, 10);
+      do Output.printString(optionB);
+
+      do Output.moveCursor(16, 10);
+      do Output.printString(optionC);
+
+      while (userAnswer = 0) {
+         let userAnswer = Keyboard.keyPressed();
+      }
+      
+      let correctAnswer = currentQuestion.getAnswer();
+      let questionValue = currentQuestion.getValue();
+      if (userAnswer = correctAnswer) {
+         do Board.addScore(questionValue);
+         do Screen.clearScreen();
+         do Output.moveCursor(13, 25);
+         do Output.printString("Correct!");
+      }
+      return;
+   }
+
    /** Validate and show selected question */
-   method int validateAndShowQuestion(char category, char value) {
-      return 0;
+   method void validateAndShowQuestion(char category, char value) {
+        var Category currentCategory;
+        var Question currentQuestion;
+        var int currentScore;
+
+        let validCategory = validateCategory(category);
+        let validValue = validateValue(value);
+        if (~validCategory) {
+            return;
+        }
+        if (~validValue) {
+           return;
+        }
+
+        let currentCategory = questions[category];
+        let currentQuestion = currentCategory[value];
+        do displayAndScoreQuestion(currentQuestion);
+
+        return;
    }
 }

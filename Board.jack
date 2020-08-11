@@ -93,6 +93,12 @@ class Board {
       return;
    }
 
+   /** Adds to the score of the game */
+   method void addScore(int value) {
+      let score = score + value;
+      return;
+   }
+
    /** Informs the user of their score */
    function void showScore() {
       var String currentScore;
