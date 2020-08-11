@@ -10,7 +10,7 @@ class Questions {
       let questions = Array.new(5);
       let questions[0] = Array.new(5);
       let categoryOne = questions[0];
-      let categoryOne[0] = Question.new(100, false, "B", "Q: What is HDL?", "A. Heavy dog licks", "B. Hardware description language", "C. High definition logging");
+      let categoryOne[0] = Question.new(100, false, 66, "Q: What is HDL?", "A. Heavy dog licks", "B. Hardware description language", "C. High definition logging");
       
       return this;
    }
@@ -133,13 +133,14 @@ class Questions {
 
    /** Show selected question */
    method void displayAndScoreQuestion(Question currentQuestion) {
-      var char userAnswer;
-      var char correctAnswer;
+      var int userAnswer;
+      var int correctAnswer;
       var int questionValue;
       var String questionContent;
       var String optionA;
       var String optionB;
       var String optionC;
+      var int waitForAck;
 
 
       let questionContent = currentQuestion.getContent();
@@ -165,12 +166,20 @@ class Questions {
       
       let correctAnswer = currentQuestion.getAnswer();
       let questionValue = currentQuestion.getValue();
+
       if (userAnswer = correctAnswer) {
          do Board.addScore(questionValue);
          do Screen.clearScreen();
          do Output.moveCursor(13, 25);
          do Output.printString("Correct!");
+
+         let waitForAck = 0;
+         while (waitForAck = 0) {
+            let waitForAck = Keyboard.keyPressed();
+         }
       }
+
+      do Screen.clearScreen();
       return;
    }
 

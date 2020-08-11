@@ -1,10 +1,10 @@
 class Question {
-    field int value;
+    field int answer, value;
     field boolean answered;
-    field string answer, content, optionA, optionB, optionC;
+    field string content, optionA, optionB, optionC;
 
     /** Constructs a new question. */
-   constructor Question new(int val, boolean done, char answr, String cntnt, String optA, String optB, String optC) {
+   constructor Question new(int val, boolean done, int answr, String cntnt, String optA, String optB, String optC) {
       let value = val;
       let answered = done;
       let answer = answr;
@@ -27,7 +27,7 @@ class Question {
    }
 
    /** Get question answer */
-   method String getAnswer() {
+   method int getAnswer() {
       return answer;
    }
 
