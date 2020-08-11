@@ -48,41 +48,41 @@ class Questions {
    }
 
    /** Validate category selection */
-   method boolean validateCategory(String category) {
-      if (category = "A") {
+   method boolean validateCategory(char c) {
+      if (c = 65) {
          return true;
       }
-      if (category = "B") {
+      if (c = 66) {
          return true;
       }
-      if (category = "C") {
+      if (c = 67) {
          return true;
       }
-      if (category = "D") {
+      if (c = 68) {
          return true;
       }
-      if (category = "E") {
+      if (c = 69) {
          return true;
       }
-
+      
       return false;
    }
 
    /** Validate value selection */
-   method boolean validateValue(String value) {
-      if (value = "1") {
+   method boolean validateValue(char v) {
+      if (v = 49) {
          return true;
       }
-      if (value = "2") {
+      if (v = 50) {
          return true;
       }
-      if (value = "3") {
+      if (v = 51) {
          return true;
       }
-      if (value = "4") {
+      if (v = 52) {
          return true;
       }
-      if (value = "5") {
+      if (v = 53) {
          return true;
       }
 
@@ -90,20 +90,20 @@ class Questions {
    }
 
    /** Parse category selection */
-   method int parseCategory(String category) {
-      if (category = "A") {
+   method int parseCategory(char category) {
+      if (category = 65) {
          return 0;
       }
-      if (category = "B") {
+      if (category = 66) {
          return 1;
       }
-      if (category = "C") {
+      if (category = 67) {
          return 2;
       }
-      if (category = "D") {
+      if (category = 68) {
          return 3;
       }
-      if (category = "E") {
+      if (category = 69) {
          return 4;
       }
 
@@ -111,20 +111,20 @@ class Questions {
    }
 
    /** Parse value selection */
-   method boolean parseValue(String value) {
-      if (value = "1") {
+   method boolean parseValue(char value) {
+      if (value = 49) {
          return 0;
       }
-      if (value = "2") {
+      if (value = 50) {
          return 1;
       }
-      if (value = "3") {
+      if (value = 51) {
          return 2;
       }
-      if (value = "4") {
+      if (value = 52) {
          return 3;
       }
-      if (value = "5") {
+      if (value = 53) {
          return 4;
       }
 
