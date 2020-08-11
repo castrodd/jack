@@ -15,5 +15,9 @@ class Question {
       return this;
    }
 
-   
+   /** Disposes the question. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
 }

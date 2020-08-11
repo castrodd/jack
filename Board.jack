@@ -94,7 +94,7 @@ class Board {
    }
 
    /** Adds to the score of the game */
-   method void addScore(int value) {
+   function void addScore(int value) {
       let score = score + value;
       return;
    }
