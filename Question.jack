@@ -20,4 +20,20 @@ class Question {
       do Memory.deAlloc(this);
       return;
    }
+
+   /** Get question content */
+   method String getContent() {
+      return content;
+   }
+
+   /** Get question answer */
+   method String getAnswer() {
+      return answer;
+   }
+
+   /** Get question value */
+   method String getValue() {
+      return value;
+   }
+
 }
