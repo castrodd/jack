@@ -287,8 +287,8 @@ class Questions {
    method void askCategory() {
       var String prompt;
       var String emptyLine;
-      let prompt = "Enter a category? ";
-      let emptyLine = "                    ";
+      let prompt = "Enter a category (A-E): ";
+      let emptyLine = "                        ";
       do Output.moveCursor(22, 10);
       do Output.printString(emptyLine);
       do Output.moveCursor(22, 10);
@@ -300,8 +300,8 @@ class Questions {
    method void askValue() {
       var String prompt;
       var String emptyLine;
-      let prompt = "Enter a value? ";
-      let emptyLine = "                    ";
+      let prompt = "Enter a level (1-5): ";
+      let emptyLine = "                          ";
       do Output.moveCursor(22, 10);
       do Output.printString(emptyLine);
       do Output.moveCursor(22, 10);
@@ -407,7 +407,7 @@ class Questions {
 
       let questionContent = currentQuestion.getContent();
       do Screen.clearScreen();
-      do Output.moveCursor(7, 10);
+      do Output.moveCursor(5, 5);
       do Output.printString(questionContent);
       
       let optionA = currentQuestion.getOptionA();
@@ -434,11 +434,17 @@ class Questions {
          do Screen.clearScreen();
          do Output.moveCursor(13, 25);
          do Output.printString("Correct!");
+      }
+      if (~(userAnswer = correctAnswer)) {
+         do Board.addScore(questionValue);
+         do Screen.clearScreen();
+         do Output.moveCursor(13, 25);
+         do Output.printString("Wrong!");
+      }
 
-         let waitForAck = 0;
-         while (waitForAck = 0) {
-            let waitForAck = Keyboard.keyPressed();
-         }
+      let waitForAck = 0;
+      while (waitForAck = 0) {
+         let waitForAck = Keyboard.keyPressed();
       }
       
       do currentQuestion.setComplete();
