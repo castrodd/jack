@@ -6438,20 +6438,6 @@ call Questions.displayAndScoreQuestion 2
 pop temp 0
 push constant 0
 return
-function Questions.getQuestions 0
-push argument 0
-pop pointer 0
-push static 0
-return
-function Questions.getCategory 0
-push argument 0
-pop pointer 0
-push argument 1
-push static 0
-add
-pop pointer 1
-push that 0
-return
 function Questions.getQuestion 1
 push argument 0
 push static 0

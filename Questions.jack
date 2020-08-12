@@ -478,16 +478,6 @@ class Questions {
         return;
    }
 
-   /** Provide all questions */
-   method Array getQuestions() {
-      return questions;
-   }
-
-   /** Provide category */
-   method Array getCategory(int index) {
-      return questions[index];
-   }
-
    /** Provide question */
    function Question getQuestion(int cat, int value) {
       var Array category;

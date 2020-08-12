@@ -30,7 +30,7 @@ function JackpardyGame.run 1
 push argument 0
 pop pointer 0
 push this 0
-call Board.showRemainingQuestions 1
+call Board.getRemainingQuestions 1
 pop local 0
 label WHILE_EXP0
 push local 0

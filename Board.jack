@@ -2,7 +2,7 @@
 class Board {
    static int score;
    static int remainingQuestions;
-   field int x, y;   
+   field int x, y;  
 
    /** Constructs a new board with a given location and size. */
    constructor Board new() {
@@ -30,7 +30,6 @@ class Board {
       do Board.addCategories();
       do Board.fillBoard();
       do Board.showScore();
-
       return;
    }
 
@@ -77,7 +76,6 @@ class Board {
       let row = 7;
       let categoryIndex = 0;
       let questionIndex = 0;
-      // let allQuestions = questions.getQuestions();
 
       while (column < 51) {
          while (row < 20) {
@@ -122,7 +120,7 @@ class Board {
    }
 
    /** Returns number of questions remaining in game. **/
-   method int showRemainingQuestions() {
+   method int getRemainingQuestions() {
       return remainingQuestions;
    }
 
