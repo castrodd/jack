@@ -1,6 +1,6 @@
 class Questions {
     field boolean validCategory, validValue;
-    field Array categoryOne;
+    field Array categoryOne, categoryTwo, categoryThree, categoryFour, categoryFive;
     static Array questions;
 
     /** Constructs a new question checker. */
@@ -9,8 +9,266 @@ class Questions {
       let validValue = false;
       let questions = Array.new(5);
       let questions[0] = Array.new(5);
+
       let categoryOne = questions[0];
-      let categoryOne[0] = Question.new(100, false, false, 66, "Q: What is HDL?", "A. Heavy dog licks", "B. Hardware description language", "C. High definition logging");
+      let categoryOne[0] = Question.new(
+         100, 
+         false, 
+         false, 
+         66, 
+         "Q: What is HDL?", 
+         "A. Heavy dog licks", 
+         "B. Hardware description language", 
+         "C. High definition logging"
+      );
+      let categoryOne[1] = Question.new(
+         200,
+         false,
+         false,
+         67,
+         "Q: What is CPU?",
+         "A. Core Processor Unit",
+         "B. Critical Program Unification",
+         "C. Central Processing Unit"
+      );
+      let categoryOne[2] = Question.new(
+         300,
+         false,
+         false,
+         65,
+         "Q: What is ALU?",
+         "A. Arithmetic Logic Unit",
+         "B. Addition Logic Unit",
+         "C. Accessory Logic Unit"
+      );
+      let categoryOne[3] = Question.new(
+         400,
+         false,
+         false,
+         65,
+         "Q: What is DFF?",
+         "A. Data flip-flop",
+         "B. Data flimsy-flopsy",
+         "C. Data fast-forward"
+      );
+      let categoryOne[4] = Question.new(
+         500,
+         false,
+         false,
+         67,
+         "Q: What is CISC?",
+         "A. Core instruction set complex",
+         "B. Compact instruction set criteria",
+         "C. Complex instruction set computer"
+      );
+
+      let categoryTwo = questions[1];
+      let categoryTwo[0] = Question.new(
+         100,
+         false,
+         false,
+         66,
+         "Q: Which chip is also known as a bit or binary cell?",
+         "A. Counter",
+         "B. Register",
+         "C. Flip-flop"
+      );
+      let categoryTwo[1] = Question.new(
+         200,
+         false,
+         false,
+         67,
+         "Q: Which chip 'selects' one of two inputs?",
+         "A. ALU",
+         "B. Xor",
+         "C. Multiplexor"
+      );
+      let categoryTwo[2] = Question.new(
+         300,
+         false,
+         false,
+         66,
+         "Q: Which method is used to add signed binary numbers?",
+         "A. Modular arithmetic",
+         "B. 2's complement",
+         "C. 3's company"
+      );
+      let categoryTwo[3] = Question.new(
+         400,
+         false,
+         false,
+         65,
+         "Q: What is not contained within the data memory?",
+         "A. ROM",
+         "B. RAM",
+         "C. Keyboard memory map"
+      );
+      let categoryTwo[4] = Question.new(
+         500,
+         false,
+         false,
+         65,
+         "Q: What is the length of an instruction called?",
+         "A. Word",
+         "B. Width",
+         "C. Scope"
+      );
+      
+      let categoryThree = questions[2];
+      let categoryThree[0] = Question.new(
+         100,
+         false,
+         false,
+         66,
+         "Q: The Hack machine language does not contain:",
+         "A. A-instructions",
+         "B. B-instructions",
+         "C. C-instructions"
+      );
+      let categoryThree[1] = Question.new(
+         200,
+         false,
+         false,
+         67,
+         "Q: Which Hack machine language instructions allow you to 'jump' to a new location:",
+         "A. A-instructions",
+         "B. Pseudo-commands",
+         "C. C-instructions"
+      );
+      let categoryThree[2] = Question.new(
+         300,
+         false,
+         false,
+         65,
+         "Q: What is a sequence of machine instructions with a name?",
+         "A. Macro command",
+         "B. Micro command",
+         "C. Pseudo-command"
+      );
+      let categoryThree[3] = Question.new(
+         400,
+         false,
+         false,
+         66,
+         "Q: Which Hack machine language instructions generate no machine code?",
+         "A. A-instructions",
+         "B. Pseudo-commands",
+         "C. C-instructions"
+      );
+      let categoryThree[4] = Question.new(
+         500,
+         false,
+         false,
+         66,
+         "Q: Where are the variables and labels in a machine language program stored?",
+         "A. A register",
+         "B. Symbol table",
+         "C. Stack"
+      );
+
+      let categoryFour = questions[3];
+      let categoryFour[0] = Question.new(
+         100,
+         false,
+         false,
+         67,
+         "Q: What is not a benefit of virtual machine languages?",
+         "A. Code sharing and interoperability",
+         "B. Modularity",
+         "C. Hardware optimization"
+      );
+      let categoryFour[1] = Question.new(
+         200,
+         false,
+         false,
+         66,
+         "Q: Can any arithmetic and Boolean expression be converted and evaluated into stack operations?",
+         "A. No, only binary arithmetic and Boolean expressions can be used.",
+         "B. Yes, all arithmetic and Boolean expressions can be converted and evaluated on a stack.",
+         "C. Yes, but some expressions can only be converted to a stack, but not evaluated."
+      );
+      let categoryFour[2] = Question.new(
+         300,
+         false,
+         false,
+         67,
+         "Q: Which of the following is not a memory segment used by the VM?",
+         "A. This",
+         "B. That",
+         "C. Those"
+      );
+      let categoryFour[3] = Question.new(
+         400,
+         false,
+         false,
+         66,
+         "Q: What are RAM addresses 16-255 used for in the Hack computer?",
+         "A. Heap",
+         "B. Static variables",
+         "C. Registers"
+      );
+      let categoryFour[4] = Question.new(
+         500,
+         false,
+         false,
+         65,
+         "Q: Which of the following languages does not employ intermediate code?",
+         "A. Python",
+         "B. Java",
+         "C. J#"
+      );
+
+      let categoryFive = questions[4];
+      let categoryFive[0] = Question.new(
+         100,
+         false,
+         false,
+         65,
+         "Q: Which of the following is not a primitive data type in Jack?",
+         "A. String",
+         "B. Char",
+         "C. Int"
+      );
+      let categoryFive[1] = Question.new(
+         200,
+         false,
+         false,
+         66,
+         "Q: Which of the following is not a reserved word in Jack?",
+         "A. static",
+         "B. local",
+         "C. method"
+      );
+      let categoryFive[2] = Question.new(
+         300,
+         false,
+         false,
+         66,
+         "Q: How many bits are integers in Jack?",
+         "A. 8-bit",
+         "B. 16-bit",
+         "C. 32-bit"
+      );
+      let categoryFive[3] = Question.new(
+         400,
+         false,
+         false,
+         65,
+         "Q: Which type of variable does every object instance of a class have a private copy of?",
+         "A. Field",
+         "B. Static",
+         "C. Local" 
+      );
+      let categoryFive[4] = Question.new(
+         500,
+         false,
+         false,
+         67,
+         "Q: Which is not a function in the Jack standard library?",
+         "A. Peek",
+         "B. Poke",
+         "C. Pick" 
+      );
       
       return this;
    }
@@ -179,12 +437,12 @@ class Questions {
          }
       }
       
-      currentQuestion.setComplete();
+      do currentQuestion.setComplete();
       do Screen.clearScreen();
       return;
    }
 
-   /** Validate and show selected question */
+   /** Validate selected question */
    method void validateAndShowQuestion(char category, char value) {
         var Category currentCategory;
         var Question currentQuestion;

@@ -28,7 +28,7 @@ class JackpardyGame {
       let remainingQuestions = board.showRemainingQuestions();
       
       while (remainingQuestions > 0) {
-        do board.display();
+        do board.display(questions);
         
         do questions.askCategory();
         while (currentCategory = 0) {

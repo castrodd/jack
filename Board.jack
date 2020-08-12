@@ -67,7 +67,7 @@ class Board {
 
    /** Fills in board */
    function void fillBoard(Questions questions) {
-      var int column, row, categoryIndex, currentValue;
+      var int column, row, categoryIndex, questionIndex, currentValue;
       var Array allQuestions;
       var Category currentCategory;
       var Question currentQuestion;
