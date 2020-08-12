@@ -1,0 +1,73 @@
+function Question.new 0
+push constant 8
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 1
+push argument 1
+pop this 2
+push argument 2
+pop this 3
+push argument 3
+pop this 0
+push argument 4
+pop this 4
+push argument 5
+pop this 5
+push argument 6
+pop this 6
+push argument 7
+pop this 7
+push pointer 0
+return
+function Question.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Question.getContent 0
+push argument 0
+pop pointer 0
+push this 4
+return
+function Question.getAnswer 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Question.getValue 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Question.getOptionA 0
+push argument 0
+pop pointer 0
+push this 5
+return
+function Question.getOptionB 0
+push argument 0
+pop pointer 0
+push this 6
+return
+function Question.getOptionC 0
+push argument 0
+pop pointer 0
+push this 7
+return
+function Question.setComplete 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+pop this 2
+push constant 0
+return
+function Question.isComplete 0
+push argument 0
+pop pointer 0
+push this 2
+return
