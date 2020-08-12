@@ -1,14 +1,18 @@
 class Questions {
     field boolean validCategory, validValue;
-    field Array categoryOne, categoryTwo, categoryThree, categoryFour, categoryFive;
-    static Array questions;
+    static Array questions, categoryOne, categoryTwo, categoryThree, categoryFour, categoryFive;
 
     /** Constructs a new question checker. */
    constructor Questions new() {
       let validCategory = false;
       let validValue = false;
+      
       let questions = Array.new(5);
       let questions[0] = Array.new(5);
+      let questions[1] = Array.new(5);
+      let questions[2] = Array.new(5);
+      let questions[3] = Array.new(5);
+      let questions[4] = Array.new(5);
 
       let categoryOne = questions[0];
       let categoryOne[0] = Question.new(
@@ -468,8 +472,20 @@ class Questions {
         return;
    }
 
-   /** Provide questions */
+   /** Provide all questions */
    method Array getQuestions() {
       return questions;
+   }
+
+   /** Provide category */
+   method Array getCategory(int index) {
+      return questions[index];
+   }
+
+   /** Provide question */
+   function Question getQuestion(int cat, int value) {
+      var Array category;
+      let category = questions[cat];
+      return category[value];
    }
 }

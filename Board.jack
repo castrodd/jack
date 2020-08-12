@@ -69,7 +69,7 @@ class Board {
    function void fillBoard(Questions questions) {
       var int column, row, categoryIndex, questionIndex, currentValue;
       var Array allQuestions;
-      var Category currentCategory;
+      var Array currentCategory;
       var Question currentQuestion;
       var boolean isComplete;
 
@@ -77,15 +77,16 @@ class Board {
       let row = 7;
       let categoryIndex = 0;
       let questionIndex = 0;
-      let allQuestions = questions.getQuestions();
+      // let allQuestions = questions.getQuestions();
 
       while (column < 51) {
          while (row < 20) {
-            let currentCategory = allQuestions[categoryIndex];
-            let currentQuestion = currentCategory[questionIndex];
+            // let currentCategory = Questions.getCategory(categoryIndex];
+            let currentQuestion = Questions.getQuestion(categoryIndex, questionIndex);
             let isComplete = currentQuestion.isComplete();
             let currentValue = currentQuestion.getValue();
 
+            do Output.moveCursor(row, column);
             if (isComplete) {
                do Output.printString("X");
             }
@@ -99,7 +100,7 @@ class Board {
          
          let column = column + 10;
          let row = 7;
-         let currentCategory = currentCategory + 1;
+         let categoryIndex = currentCategory + 1;
          let questionIndex = 0;
       }
       return;
